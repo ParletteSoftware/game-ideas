@@ -1,3 +1,3 @@
 class Game < ActiveRecord::Base
-  attr_accessible :deployed, :description, :implemented, :site, :title
+  validates :title, presence: true, length: { minimum: 2 }
 end
