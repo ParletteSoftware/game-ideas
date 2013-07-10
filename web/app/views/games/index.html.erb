@@ -1,0 +1,24 @@
+<h1>Listing posts</h1>
+ 
+<table style="width:100%; text-align:center;">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Site</th>
+    <th>Implemented</th>
+    <th>Deployed</th>
+  </tr>
+ 
+  <% @games.each do |game| %>
+    <tr>
+      <td><%= link_to game.title, game_path(game.id) %> <%= link_to 'edit', edit_game_path(game) %> 
+      <%= link_to 'del', game_path(game), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= game.description %></td>
+      <td><%= game.site %></td>
+      <td><%= game.implemented %></td>
+      <td><%= game.deployed %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Game', new_game_path %>
