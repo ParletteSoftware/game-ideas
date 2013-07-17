@@ -1,0 +1,26 @@
+<p>
+  <strong>Title:</strong>
+  <%= @game.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @game.description %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @game.site %>
+</p>
+
+<p>
+  <strong>Implemented:</strong>
+  <%= @game.implemented %>
+</p>
+
+<p>
+  <strong>Deployed:</strong>
+  <%= @game.deployed %>
+</p>
+
+<%= link_to 'Back', games_path %> | <%= link_to 'Edit', edit_game_path(@game) %>
